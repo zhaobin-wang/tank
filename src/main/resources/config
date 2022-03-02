@@ -1,0 +1,8 @@
+#tank count initialization
+initTankCount=10
+tankSpeed=5
+
+
+#fireStrategy
+goodFireStrategy=FourDirFireStrategy
+badFireStrategy=DefaultFireStrategy
