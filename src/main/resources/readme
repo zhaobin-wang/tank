@@ -180,7 +180,16 @@
 
               cat ~/.ssh/id_rsa.pub
 
-            ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD9S2lo0iALjcBeE7dlCpXN+dN3asjaABIQOjAQJSKM                                                                                                                ho+UL2LQJhmbPhYQyio2IRV4sHgXUSXseZ8Dzo/B8oBiC94h25rrIb8UMmKp3Cctk1e1LabmhIVwzAZt                                                                                                                4cpyHpyryUqGbE4hy+7vBcBGwGjuQBR1cixJn3v+nc6jGtF+4UlIXDSOu9sYMiyCuqGKCjqQjvLDGRul                                                                                                                VmtJ8eROPMJLlRZ43Xg+vTFz0jH3EJP8OnguU+EH82XMHhgDpD0xyWS/mVcDKtYh4rUL/Ky8fXQuxY3b                                  RU5QKjHYuw88E3impT7VZz9IRcJQUtet9xVh69/qyH56SGfxZ/LjbjUbuEcR 987679265@qq.com
+            ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD9S2lo0iALjcBeE7dlCpXN+dN3asjaABIQOjAQJSKM
+            ho+UL2LQJhmbPhYQyio2IRV4sHgXUSXseZ8Dzo/B8oBiC94h25rrIb8UMmKp3Cctk1e1LabmhIVwzAZt
+
+
+    20220304
+        idea怎么提交代码到Git
+        IDEA:VCS-->Import into Version Control-->Create Git Repository
+        IDEA：VCS-->Git-->Add添加当前项目下的文件，添加完成之后，之前的红色文件名变成了绿色了，表示已经Add成功。
+        IDEA:VCS-->Git-->Push
+        将gitlab上面的仓库地址获取到    （这里要注意，需要远程仓库里面有一个项目）  git@github.com:zhaobin-wang/tank 4cpyHpyryUqGbE4hy+7vBcBGwGjuQBR1cixJn3v+nc6jGtF+4UlIXDSOu9sYMiyCuqGKCjqQjvLDGRul                                                                                                                VmtJ8eROPMJLlRZ43Xg+vTFz0jH3EJP8OnguU+EH82XMHhgDpD0xyWS/mVcDKtYh4rUL/Ky8fXQuxY3b                                  RU5QKjHYuw88E3impT7VZz9IRcJQUtet9xVh69/qyH56SGfxZ/LjbjUbuEcR 987679265@qq.com
 
 
 
