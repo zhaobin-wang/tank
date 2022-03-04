@@ -195,5 +195,32 @@
             List<String> list = Splitter.on(",").splitToList(Str);   需要依赖  guava
 
 
+    20220304
+        枚举
+        public enum CourseStatusEnum{
+            LEAVE(1,"xxx"),
+            OT_LEAVE(0,"xxx");
+
+            private final Integer stats;
+            private final String desc;
+
+            CourseStatusEnum(Integer status, String desc){
+                this.status = status;
+                this.desc = desc;
+            }
+
+            public Integer getStatus(){
+                return stats;
+            }
+            public String getDesc(){
+                return desc;
+            }
+
+        }
+
+
+
+
+
 
 

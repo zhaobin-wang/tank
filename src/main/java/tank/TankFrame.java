@@ -43,7 +43,7 @@ public class TankFrame extends Frame {
     public static final int GAME_WIDTH = 1080, GAME_HEIGHT = 900;
 
     //先初始化一个工厂
-    public GameFactory gf = new RectFactory();
+    public GameFactory gf = new DefaultFactory();
 
 
     public TankFrame() {
