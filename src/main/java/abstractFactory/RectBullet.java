@@ -56,7 +56,7 @@ public class RectBullet extends BaseBullet {
     public void paint(Graphics g) {
 
         if(!living){
-            tf.bullets.remove(this);
+            //tf.bullets.remove(this);
         }
 
 //        Color c = g.getColor();

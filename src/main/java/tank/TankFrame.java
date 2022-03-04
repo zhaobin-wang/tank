@@ -1,6 +1,5 @@
 package tank;
 
-import abstractFactory.*;
 import lombok.extern.slf4j.Slf4j;
 
 import java.awt.*;
@@ -8,42 +7,15 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.util.ArrayList;
-import java.util.List;
 
 @Slf4j
 public class TankFrame extends Frame {
 
-    //1.0  之前是一个坦克直接创建
-//    int x = 200;
-//    int y = 200;
-//
-//    Dir dir = Dir.DOWN;
-//    private static final int SPEED = 10;
 
-    //V1.1 面向对象的封装
-    Tank myTank = new Tank(200, 600, Dir.DOWN, Group.GOOD, this);
-
-    //Tank enemyTank = new Tank(200, 400, Dir.DOWN,this);
-
-    //子弹
-    public List<Bullet> bullets = new ArrayList<Bullet>();
-    //坦克
-    public List<Tank> tanks = new ArrayList<Tank>();
-
-    //Explode e = new Explode(100, 100, this);
-
-
-    //Bullet b = new Bullet(200, 200, Dir.DOWN, Group.GOOD, this);
-
-
-    public List<Explode> explodes = new ArrayList<Explode>();
+    GameModel gm = new GameModel();
 
 
     public static final int GAME_WIDTH = 1080, GAME_HEIGHT = 900;
-
-    //先初始化一个工厂
-    //public GameFactory gf = new DefaultFactory();
 
 
     public TankFrame() {
@@ -93,54 +65,7 @@ public class TankFrame extends Frame {
 
     @Override
     public void paint(Graphics g) {
-        //log.info("paint！");
-
-        Color c = g.getColor();
-        g.setColor(Color.BLACK);
-        g.drawString("子弹的数量：" + bullets.size(), 10, 60);
-        g.drawString("敌方的数量：" + tanks.size(), 10, 80);
-        g.drawString("爆炸的数量：" + explodes.size(), 10, 100);
-        g.setColor(c);
-
-        myTank.paint(g);
-        //enemyTank.paint(g);
-
-        //子弹
-        for (int i = 0; i < bullets.size(); i++) {
-            bullets.get(i).paint(g);
-        }
-
-        //敌方坦克
-        for (int i = 0; i < tanks.size(); i++) {
-            tanks.get(i).paint(g);
-        }
-
-        for (int i = 0; i < explodes.size(); i++) {
-            explodes.get(i).paint(g);
-        }
-
-        //碰撞检测
-        for (int i = 0; i < bullets.size(); i++) {
-            for (int j = 0; j < tanks.size(); j++)
-                bullets.get(i).collideWith(tanks.get(j));
-        }
-
-        //e.paint(g);
-
-
-        //这种也是可以
-//        for(Iterator<Bullet> it = bullets.iterator(); it.hasNext();){
-//            Bullet b = it.next();
-//            if(!b.live) it.remove();
-//        }
-
-        //下面这种写法会造成   Exception in thread "AWT-EventQueue-0" java.util.ConcurrentModificationException
-        //使用的时候默认是集合内部的迭代器，其他类没法获取到，使用简单的遍历方式就可以
-//        for(Bullet b : bullets){
-//            b.paint(g);
-//        }
-        // x += 10;
-        //y += 10;
+        gm.paint(g);
     }
 
 
@@ -207,7 +132,7 @@ public class TankFrame extends Frame {
 
                 //J键打出子弹
                 case KeyEvent.VK_J:
-                    myTank.fire();
+                    gm.getMainTank().fire();
                     Audio.play("/Users/wangzhaobin/Downloads/tankProject/src/audio/tank_fire.wav");
                     break;
                 default:
@@ -218,15 +143,15 @@ public class TankFrame extends Frame {
 
         private void setMainTankDir() {
 
-            if (!bL && !bU && !bD && !bR) myTank.setMoving(false);
+            if (!bL && !bU && !bD && !bR) gm.getMainTank().setMoving(false);
 
             else {
-                myTank.setMoving(true);
+                gm.getMainTank().setMoving(true);
 
-                if (bL) myTank.setDir(Dir.LEFT);
-                if (bU) myTank.setDir(Dir.UP);
-                if (bR) myTank.setDir(Dir.RIGHT);
-                if (bD) myTank.setDir(Dir.DOWN);
+                if (bL) gm.getMainTank().setDir(Dir.LEFT);
+                if (bU) gm.getMainTank().setDir(Dir.UP);
+                if (bR) gm.getMainTank().setDir(Dir.RIGHT);
+                if (bD) gm.getMainTank().setDir(Dir.DOWN);
             }
 
         }

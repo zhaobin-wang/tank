@@ -35,14 +35,15 @@ public class Bullet {
     //子弹也是需要分组
     private Group group = Group.BAD;
     //引用TankFrame
-    private TankFrame tf = null;
+    private GameModel gm = null;
 
-    public Bullet(int x, int y, Dir dir, Group group, TankFrame tf) {
+
+    public Bullet(int x, int y, Dir dir, Group group, GameModel gm) {
         this.x = x;
         this.y = y;
         this.dir = dir;
         this.group = group;
-        this.tf = tf;
+        this.gm = gm;
 
         rect.x = this.x;
         rect.y = this.y;
@@ -50,14 +51,14 @@ public class Bullet {
         rect.height = HEIGHT;
 
         //todo   创建bullet的时候直接把子弹放到子弹队列里面
-        tf.bullets.add(this);
+        gm.bullets.add(this);
     }
 
 
     public void paint(Graphics g) {
 
         if(!living){
-            tf.bullets.remove(this);
+            gm.bullets.remove(this);
         }
 
 //        Color c = g.getColor();
@@ -126,7 +127,7 @@ public class Bullet {
             //算一下爆炸的位置
             int ex = tank.getX() + Tank.WIDTH / 2 - Explode.WIDTH / 2;
             int ey = tank.getY() + Tank.HEIGHT / 2 - Explode.HEIGHT / 2;
-            tf.explodes.add(new Explode(ex, ey, tf));
+            gm.explodes.add(new Explode(ex, ey, gm));
         }
 
     }

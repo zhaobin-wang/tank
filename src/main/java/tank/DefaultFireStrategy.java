@@ -11,6 +11,6 @@ public class DefaultFireStrategy implements FireStrategy {
         int bx = t.x + Tank.WIDTH / 2 - Bullet.WIDTH / 2;
         int by = t.y + Tank.HEIGHT / 2 - Bullet.HEIGHT / 2;
 
-        new Bullet(bx, by, t.dir, t.group, t.tf);
+        new Bullet(bx, by, t.dir, t.group, t.gm);
     }
 }

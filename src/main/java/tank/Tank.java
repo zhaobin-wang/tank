@@ -20,7 +20,7 @@ public class Tank {
     //默认方向
     public Dir dir = Dir.DOWN;
 
-    private static final int SPEED = 1;
+    private static final int SPEED = 2;
 
     public Group group = Group.BAD;
 
@@ -31,7 +31,7 @@ public class Tank {
     //分组
 
     //持有tankFrame的引用，把子弹传递给Tank
-    public TankFrame tf = null;
+    public GameModel gm = null;
 
     public FireStrategy fireStrategy;
 
@@ -41,12 +41,12 @@ public class Tank {
 
     private Random random = new Random();
 
-    public Tank(int x, int y, Dir dir, Group group, TankFrame tf) {
+    public Tank(int x, int y, Dir dir, Group group, GameModel gm) {
         this.x = x;
         this.y = y;
         this.dir = dir;
         this.group = group;
-        this.tf = tf;
+        this.gm = gm;
 
         rect.x = this.x;
         rect.y = this.y;
@@ -86,7 +86,7 @@ public class Tank {
 //        g.setColor(Color.BLUE);
 //        g.fillRect(x, y, 20, 20);
 
-        if(!living) tf.tanks.remove(this);
+        if(!living) gm.tanks.remove(this);
 
 
         //画图，把图片画到这个位置
@@ -174,7 +174,7 @@ public class Tank {
         int bx = this.x + Tank.WIDTH/2 - Bullet.WIDTH/2;
         int by = this.y + Tank.HEIGHT/2 - Bullet.HEIGHT/2;
 
-        tf.bullets.add(new Bullet(bx, by, this.dir, this.group, this.tf));
+        gm.bullets.add(new Bullet(bx, by, this.dir, this.group, this.gm));
     }
 
     public void die() {

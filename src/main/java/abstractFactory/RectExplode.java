@@ -51,7 +51,7 @@ public class RectExplode extends BaseExplode {
         step++;
 
         if(step >= 5){
-            tf.explodes.remove(this);
+            //tf.explodes.remove(this);
         }
         g.setColor(c);
 

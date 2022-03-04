@@ -85,7 +85,7 @@ public class RectTank extends BaseTank {
 //        g.setColor(Color.BLUE);
 //        g.fillRect(x, y, 20, 20);
 
-        if(!living) tf.tanks.remove(this);
+        //if(!living) tf.tanks.remove(this);
 
 
         //画图，把图片画到这个位置
