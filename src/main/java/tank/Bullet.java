@@ -13,7 +13,7 @@ import java.awt.*;
  * @date 2022/2/14 上午11:56
  */
 @Data
-public class Bullet extends BaseBullet {
+public class Bullet {
 
     //子弹的速度
     private static final int SPEED = 5;
@@ -53,7 +53,7 @@ public class Bullet extends BaseBullet {
         tf.bullets.add(this);
     }
 
-    @Override
+
     public void paint(Graphics g) {
 
         if(!living){
@@ -112,7 +112,7 @@ public class Bullet extends BaseBullet {
     }
 
     //干掉敌方
-    public void collideWith(BaseTank tank) {
+    public void collideWith(Tank tank) {
         if (this.group == tank.getGroup()) return;
 
 
@@ -126,7 +126,7 @@ public class Bullet extends BaseBullet {
             //算一下爆炸的位置
             int ex = tank.getX() + Tank.WIDTH / 2 - Explode.WIDTH / 2;
             int ey = tank.getY() + Tank.HEIGHT / 2 - Explode.HEIGHT / 2;
-            tf.explodes.add(tf.gf.createExplode(ex, ey, tf));
+            tf.explodes.add(new Explode(ex, ey, tf));
         }
 
     }

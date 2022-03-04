@@ -27,9 +27,9 @@ public class TankFrame extends Frame {
     //Tank enemyTank = new Tank(200, 400, Dir.DOWN,this);
 
     //子弹
-    public List<BaseBullet> bullets = new ArrayList<BaseBullet>();
+    public List<Bullet> bullets = new ArrayList<Bullet>();
     //坦克
-    public List<BaseTank> tanks = new ArrayList<BaseTank>();
+    public List<Tank> tanks = new ArrayList<Tank>();
 
     //Explode e = new Explode(100, 100, this);
 
@@ -37,13 +37,13 @@ public class TankFrame extends Frame {
     //Bullet b = new Bullet(200, 200, Dir.DOWN, Group.GOOD, this);
 
 
-    public List<BaseExplode> explodes = new ArrayList<BaseExplode>();
+    public List<Explode> explodes = new ArrayList<Explode>();
 
 
     public static final int GAME_WIDTH = 1080, GAME_HEIGHT = 900;
 
     //先初始化一个工厂
-    public GameFactory gf = new DefaultFactory();
+    //public GameFactory gf = new DefaultFactory();
 
 
     public TankFrame() {

@@ -49,7 +49,7 @@ public class RectBullet extends BaseBullet {
         rect.height = HEIGHT;
 
         //todo   创建bullet的时候直接把子弹放到子弹队列里面
-        tf.bullets.add(this);
+        //tf.bullets.add(this);
     }
 
     @Override
@@ -126,7 +126,7 @@ public class RectBullet extends BaseBullet {
             //算一下爆炸的位置
             int ex = tank.getX() + Tank.WIDTH / 2 - Explode.WIDTH / 2;
             int ey = tank.getY() + Tank.HEIGHT / 2 - Explode.HEIGHT / 2;
-            tf.explodes.add(tf.gf.createExplode(ex, ey, tf));
+            //tf.explodes.add(tf.gf.createExplode(ex, ey, tf));
         }
 
     }

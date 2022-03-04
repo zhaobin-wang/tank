@@ -14,7 +14,7 @@ public class main {
 
         //初始化敌方坦克
         for (int i = 0; i < Integer.parseInt(countStr); i++) {
-            tf.tanks.add(tf.gf.createTank(180 + i * 80, 100, Dir.DOWN, Group.BAD, tf));
+            tf.tanks.add(new Tank(180 + i * 80, 100, Dir.DOWN, Group.BAD, tf));
         }
 
         Audio.play("/Users/wangzhaobin/Downloads/tankProject/src/audio/war1.wav");

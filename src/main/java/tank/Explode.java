@@ -12,7 +12,7 @@ import java.awt.*;
  * @date 2022/2/14 上午11:56
  */
 @Data
-public class Explode extends BaseExplode {
+public class Explode {
 
     //大小
     public static int WIDTH = ResourceMgr.explodes[0].getWidth();
@@ -36,7 +36,6 @@ public class Explode extends BaseExplode {
 
     }
 
-    @Override
     public void paint(Graphics g) {
 
         g.drawImage(ResourceMgr.explodes[step++], x, y, null);

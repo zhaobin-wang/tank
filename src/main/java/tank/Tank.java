@@ -1,8 +1,6 @@
 package tank;
 
-import abstractFactory.BaseBullet;
 import abstractFactory.BaseTank;
-import abstractFactory.RectBullet;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
@@ -15,7 +13,7 @@ import java.util.Random;
  */
 @Data
 @Slf4j
-public class Tank extends BaseTank {
+public class Tank {
 
     //位置
     public int x, y;
@@ -23,6 +21,10 @@ public class Tank extends BaseTank {
     public Dir dir = Dir.DOWN;
 
     private static final int SPEED = 1;
+
+    public Group group = Group.BAD;
+
+    public Rectangle rect = new Rectangle();
 
     private boolean moving = true;
     private boolean living = true;
@@ -172,7 +174,7 @@ public class Tank extends BaseTank {
         int bx = this.x + Tank.WIDTH/2 - Bullet.WIDTH/2;
         int by = this.y + Tank.HEIGHT/2 - Bullet.HEIGHT/2;
 
-        tf.bullets.add(tf.gf.createBullet(bx, by, this.dir, this.group, this.tf));
+        tf.bullets.add(new Bullet(bx, by, this.dir, this.group, this.tf));
     }
 
     public void die() {
