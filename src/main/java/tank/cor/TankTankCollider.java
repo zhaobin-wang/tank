@@ -1,6 +1,5 @@
 package tank.cor;
 
-import tank.Bullet;
 import tank.GameObject;
 import tank.Tank;
 
