@@ -224,6 +224,9 @@
         2.GameObject
         3.碰撞检测  因为现在都是物体碰撞物体 怎么去区分是什么碰什么
             3.1 Collider 碰撞接口，任何的碰撞都实现这个接口，然后自己处理。最后全部遍历一遍，做相互的碰撞    子弹和坦克的碰撞（BulletTankCollider）
+            3.2 责任链 ColliderChain 做成责任链
+                3.2.1 ColliderChain自己也实现Collider，这样的好处，可以直接add到责任链里面    只要前面的已经碰撞，就不需要往下（返回值，进行判断）
+                3.2.2 为了更好的初始化，需要把新的ColliderChain放到配置文件.最终回归配置文件。
 
         4.改变idea的快捷方式（常用）  -- setting--keymap--intellij IDEA Classic
 

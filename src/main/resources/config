@@ -6,3 +6,6 @@ tankSpeed=5
 #fireStrategy
 goodFireStrategy=tank.FourDirFireStrategy
 badFireStrategy=tank.DefaultFireStrategy
+
+#collides
+colliders=tank.cor.BulletTankCollider,tank.cor.TankTankCollider

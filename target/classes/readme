@@ -225,6 +225,7 @@
         3.碰撞检测  因为现在都是物体碰撞物体 怎么去区分是什么碰什么
             3.1 Collider 碰撞接口，任何的碰撞都实现这个接口，然后自己处理。最后全部遍历一遍，做相互的碰撞    子弹和坦克的碰撞（BulletTankCollider）
 
+        4.改变idea的快捷方式（常用）  -- setting--keymap--intellij IDEA Classic
 
 
 

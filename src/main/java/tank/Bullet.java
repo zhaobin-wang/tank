@@ -113,8 +113,8 @@ public class Bullet extends GameObject{
     }
 
     //干掉敌方
-    public void collideWith(Tank tank) {
-        if (this.group == tank.getGroup()) return;
+    public boolean collideWith(Tank tank) {
+        if (this.group == tank.getGroup()) return false;
 
 
         //获取字段的矩形位置
@@ -128,7 +128,9 @@ public class Bullet extends GameObject{
             int ex = tank.getX() + Tank.WIDTH / 2 - Explode.WIDTH / 2;
             int ey = tank.getY() + Tank.HEIGHT / 2 - Explode.HEIGHT / 2;
             gm.add(new Explode(ex, ey, gm));
+            return true;
         }
+        return false;
 
     }
 

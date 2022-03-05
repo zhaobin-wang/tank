@@ -2,6 +2,7 @@ package tank;
 
 import tank.cor.BulletTankCollider;
 import tank.cor.Collider;
+import tank.cor.ColliderChain;
 import tank.cor.TankTankCollider;
 
 import java.awt.*;
@@ -27,8 +28,8 @@ public class GameModel {
 
     Collider collider = new BulletTankCollider();
     Collider collider2 = new TankTankCollider();
-
-
+    //Collider怎么做到动态配置
+    ColliderChain chain = new ColliderChain();
 
     private List<GameObject> objects = new ArrayList<>();
 
@@ -70,8 +71,9 @@ public class GameModel {
             for (int j = i + 1; j < objects.size(); j++) {
                 GameObject o1 = objects.get(i);
                 GameObject o2 = objects.get(j);
-                collider.collider(o1,o2);
-                collider2.collider(o1,o2);
+                //第一种写法，for 每一个都碰撞
+                //第二种写法，责任链里面自己碰撞
+                chain.collide(o1, o2);
             }
         }
 
