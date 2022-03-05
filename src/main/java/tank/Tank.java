@@ -111,6 +111,11 @@ public class Tank extends GameObject{
     }
 
     private void move() {
+
+        //新建两个变量
+        //oldx oldy   碰撞之后，回到上一个位置
+
+
         if (!moving) return;
         switch (dir) {
             case LEFT:
@@ -179,5 +184,10 @@ public class Tank extends GameObject{
 
     public void die() {
         this.living = false;
+    }
+
+
+    public void stop(){
+        moving = false;
     }
 }

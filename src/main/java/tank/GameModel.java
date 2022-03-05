@@ -2,6 +2,7 @@ package tank;
 
 import tank.cor.BulletTankCollider;
 import tank.cor.Collider;
+import tank.cor.TankTankCollider;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class GameModel {
 //    public List<Explode> explodes = new ArrayList<Explode>();
 
     Collider collider = new BulletTankCollider();
-
+    Collider collider2 = new TankTankCollider();
 
 
 
@@ -70,6 +71,7 @@ public class GameModel {
                 GameObject o1 = objects.get(i);
                 GameObject o2 = objects.get(j);
                 collider.collider(o1,o2);
+                collider2.collider(o1,o2);
             }
         }
 
