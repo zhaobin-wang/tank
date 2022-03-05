@@ -4,5 +4,5 @@ tankSpeed=5
 
 
 #fireStrategy
-goodFireStrategy=FourDirFireStrategy
-badFireStrategy=DefaultFireStrategy
+goodFireStrategy=tank.FourDirFireStrategy
+badFireStrategy=tank.DefaultFireStrategy

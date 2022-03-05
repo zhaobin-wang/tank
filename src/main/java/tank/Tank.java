@@ -13,7 +13,7 @@ import java.util.Random;
  */
 @Data
 @Slf4j
-public class Tank {
+public class Tank extends GameObject{
 
     //位置
     public int x, y;
@@ -59,7 +59,7 @@ public class Tank {
             String goodFireStrategyName = PropertyMgr.get("goodFireStrategy");
             log.info("goodFireStrategyName:{}", goodFireStrategyName);
             try {
-                fireStrategy = (FireStrategy) Class.forName("tank."+ goodFireStrategyName).newInstance();
+                fireStrategy = (FireStrategy) Class.forName(goodFireStrategyName).newInstance();
                 log.info("fireStrategy:{}", fireStrategy);
             } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
                 e.printStackTrace();
@@ -73,7 +73,7 @@ public class Tank {
 
             String badFireStrategyName = PropertyMgr.get("badFireStrategy");
             try {
-                fireStrategy = (FireStrategy) Class.forName("tank."+ badFireStrategyName).newInstance();
+                fireStrategy = (FireStrategy) Class.forName(badFireStrategyName).newInstance();
             } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
                 e.printStackTrace();
             }
@@ -86,7 +86,7 @@ public class Tank {
 //        g.setColor(Color.BLUE);
 //        g.fillRect(x, y, 20, 20);
 
-        if(!living) gm.tanks.remove(this);
+        if(!living) gm.remove(this);
 
 
         //画图，把图片画到这个位置
@@ -168,13 +168,13 @@ public class Tank {
      */
     public void fire() {
 
-        //fireStrategy.fire(this);
+        fireStrategy.fire(this);
 
         //子弹位置
-        int bx = this.x + Tank.WIDTH/2 - Bullet.WIDTH/2;
-        int by = this.y + Tank.HEIGHT/2 - Bullet.HEIGHT/2;
-
-        gm.bullets.add(new Bullet(bx, by, this.dir, this.group, this.gm));
+//        int bx = this.x + Tank.WIDTH/2 - Bullet.WIDTH/2;
+//        int by = this.y + Tank.HEIGHT/2 - Bullet.HEIGHT/2;
+//
+//        gm.add(new Bullet(bx, by, this.dir, this.group, this.gm));
     }
 
     public void die() {

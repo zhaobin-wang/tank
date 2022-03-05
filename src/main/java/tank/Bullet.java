@@ -13,7 +13,7 @@ import java.awt.*;
  * @date 2022/2/14 上午11:56
  */
 @Data
-public class Bullet {
+public class Bullet extends GameObject{
 
     //子弹的速度
     private static final int SPEED = 5;
@@ -51,14 +51,14 @@ public class Bullet {
         rect.height = HEIGHT;
 
         //todo   创建bullet的时候直接把子弹放到子弹队列里面
-        gm.bullets.add(this);
+        gm.add(this);
     }
 
 
     public void paint(Graphics g) {
 
         if(!living){
-            gm.bullets.remove(this);
+            gm.remove(this);
         }
 
 //        Color c = g.getColor();
@@ -127,7 +127,7 @@ public class Bullet {
             //算一下爆炸的位置
             int ex = tank.getX() + Tank.WIDTH / 2 - Explode.WIDTH / 2;
             int ey = tank.getY() + Tank.HEIGHT / 2 - Explode.HEIGHT / 2;
-            gm.explodes.add(new Explode(ex, ey, gm));
+            gm.add(new Explode(ex, ey, gm));
         }
 
     }

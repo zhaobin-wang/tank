@@ -12,7 +12,7 @@ import java.awt.*;
  * @date 2022/2/14 上午11:56
  */
 @Data
-public class Explode {
+public class Explode extends GameObject{
 
     //大小
     public static int WIDTH = ResourceMgr.explodes[0].getWidth();
@@ -40,7 +40,7 @@ public class Explode {
 
         g.drawImage(ResourceMgr.explodes[step++], x, y, null);
 
-        if (step >= ResourceMgr.explodes.length) gm.explodes.remove(this);
+        if (step >= ResourceMgr.explodes.length) gm.remove(this);
 
     }
 

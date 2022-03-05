@@ -219,6 +219,10 @@
         }
 
 
+    20220305
+        1.改包位置之后，配置文件里面需要修改为   tank.DefaultFireStrategy   之前在代码上加tank. 的方式很low
+
+
 
 
 
