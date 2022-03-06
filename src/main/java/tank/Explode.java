@@ -29,7 +29,7 @@ public class Explode extends GameObject{
         this.x = x;
         this.y = y;
 
-        //GameModel.getInstance().add(this);
+        GameModel.getInstance().add(this);
         Audio.play("/Users/wangzhaobin/Downloads/tankProject/src/audio/explode.wav");
 
     }

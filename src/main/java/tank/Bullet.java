@@ -33,7 +33,7 @@ public class Bullet extends GameObject{
     private boolean living = true;
 
     //子弹也是需要分组
-    private Group group = Group.BAD;
+    public Group group = Group.BAD;
     //引用TankFrame
 
 
@@ -115,11 +115,6 @@ public class Bullet extends GameObject{
     //干掉敌方
     public boolean collideWith(Tank tank) {
         if (this.group == tank.getGroup()) return false;
-
-
-        //获取字段的矩形位置
-//        Rectangle rect1 = new Rectangle(this.x, this.y, WIDTH, HEIGHT);
-//        Rectangle rect2 = new Rectangle(tank.getX(), tank.getY(), Tank.WIDTH, Tank.HEIGHT);
 
         if (rect.intersects(tank.rect)) {
             tank.die();

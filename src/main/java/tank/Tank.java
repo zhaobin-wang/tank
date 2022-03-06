@@ -81,6 +81,7 @@ public class Tank extends GameObject{
             }
         }
 
+        GameModel.getInstance().add(this);
 
     }
 

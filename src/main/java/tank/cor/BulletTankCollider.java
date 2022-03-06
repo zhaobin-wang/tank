@@ -1,6 +1,7 @@
 package tank.cor;
 
 import tank.Bullet;
+import tank.Explode;
 import tank.GameObject;
 import tank.Tank;
 
@@ -17,7 +18,20 @@ public class BulletTankCollider implements Collider {
             Bullet b = (Bullet) o1;
             Tank t = (Tank) o2;
             //todo
-            if(b.collideWith(t)){
+
+//            if(b.collideWith(t)){
+//                return false;
+//            }
+
+            if (b.group == t.group) return true;
+
+            if (b.rect.intersects(t.rect)) {
+                t.die();
+                b.die();
+                //算一下爆炸的位置
+                int ex = t.getX() + Tank.WIDTH / 2 - Explode.WIDTH / 2;
+                int ey = t.getY() + Tank.HEIGHT / 2 - Explode.HEIGHT / 2;
+                new Explode(ex, ey);
                 return false;
             }
 
