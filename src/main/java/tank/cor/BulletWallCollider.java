@@ -22,7 +22,7 @@ public class BulletWallCollider implements Collider {
                 b.die();
             }
 
-        } else if(o1 instanceof Wall && o2 instanceof Bullet){
+        } else if (o1 instanceof Wall && o2 instanceof Bullet) {
             return collide(o2, o1);
         }
         return true;

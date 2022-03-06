@@ -237,6 +237,9 @@
             2.1 因为做成单例，Bullet初始化不需要把GameModel传进来，而是直接  GameModel.getInstance().add(this);
             2.2 代码重构，解耦合
         3.Decorator 装饰器
+            3.1 GODecorator 抽象类    RectDecorator、TailDecorator 都去继承 GODecorator
+            3.2 注意点：位置需要往后传， 在paint里面this.x = go.x  this.y = go.y
+            3.3 GODecorator聚合一个GameObject
 
 
 

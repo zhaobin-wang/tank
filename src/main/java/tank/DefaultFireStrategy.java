@@ -15,9 +15,10 @@ public class DefaultFireStrategy implements FireStrategy {
         int by = t.y + Tank.HEIGHT / 2 - Bullet.HEIGHT / 2;
 
         //todo new bullet 又把自己加了一遍
-        GameModel.getInstance().add(
-                new RectDecorator(
-                        new TailDecorator(
-                        new Bullet(bx, by, t.dir, t.group))));
+//        GameModel.getInstance().add(
+//                new RectDecorator(
+//                        new TailDecorator(
+//                        new Bullet(bx, by, t.dir, t.group))));
+        new Bullet(bx, by, t.dir, t.group);
     }
 }
