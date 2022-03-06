@@ -15,8 +15,8 @@ import java.util.Random;
 @Slf4j
 public class Tank extends GameObject{
 
-    //位置
-    public int x, y;
+//    //位置
+//    public int x, y;
 
     public int oldX, oldY;
     //默认方向

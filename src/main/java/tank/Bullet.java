@@ -24,7 +24,7 @@ public class Bullet extends GameObject{
     //
     public Rectangle rect = new Rectangle();
 
-    private int x, y;
+    //private int x, y;
 
     //方向
     private Dir dir;

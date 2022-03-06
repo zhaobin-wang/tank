@@ -5,18 +5,19 @@ import tank.GameObject;
 import java.awt.*;
 
 /**
+ * 尾翼
+ *
  * @author wangzhaobin
  * @date 2022/3/6 下午5:56
  */
-public class RectDecorator extends GODecorator {
+public class TailDecorator extends GODecorator {
 
-    public RectDecorator(GameObject go) {
+    public TailDecorator(GameObject go) {
         super(go);
     }
 
     @Override
     public void paint(Graphics g) {
-
         //必须跟着子弹的位置变化而变化
         this.x = go.getX();
         this.y = go.getY();
@@ -24,7 +25,7 @@ public class RectDecorator extends GODecorator {
 
         Color c = g.getColor();
         g.setColor(Color.YELLOW);
-        g.drawRect(super.go.getX(), super.go.getY(), super.go.getWidth() + 2, super.go.getHeight() + 2);
+        g.drawLine(go.getX(), go.getY(), go.getX() + getWidth(), go.getY() + getHeight());
         g.setColor(c);
 
     }

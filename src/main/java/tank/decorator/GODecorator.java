@@ -13,15 +13,10 @@ public abstract class GODecorator extends GameObject {
     //聚合一个GameObject
     GameObject go;
 
-
     public GODecorator(GameObject go){
         this.go = go;
     }
 
-
-    @Override
-    public void paint(Graphics g) {
-        go.paint(g);
-    }
+    public abstract void paint(Graphics g);
 
 }
