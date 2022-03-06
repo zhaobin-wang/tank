@@ -23,7 +23,7 @@ public class GameModel {
     private static final GameModel INSTANCE = new GameModel();
 
     //V1.1 面向对象的封装
-    Tank myTank = new Tank(200, 600, Dir.DOWN, Group.GOOD, this);
+    Tank myTank = myTank = new Tank(200, 600, Dir.DOWN, Group.GOOD);
 
 
 
@@ -46,10 +46,12 @@ public class GameModel {
     }
 
     private GameModel() {
+
+
         String countStr = PropertyMgr.get("initTankCount");
         //初始化敌方坦克
         for (int i = 0; i < Integer.parseInt(countStr); i++) {
-            add(new Tank(180 + i * 80, 100, Dir.DOWN, Group.BAD, this));
+            add(new Tank(180 + i * 80, 100, Dir.DOWN, Group.BAD));
         }
 
         //初始化墙

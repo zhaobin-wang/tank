@@ -1,6 +1,5 @@
 package tank;
 
-import abstractFactory.BaseExplode;
 import lombok.Data;
 
 import java.awt.*;
@@ -23,15 +22,14 @@ public class Explode extends GameObject{
     //是否还活着
     private boolean living = true;
 
-    //引用TankFrame
-    private GameModel gm = null;
+
     private int step = 0;
 
-    public Explode(int x, int y, GameModel gm) {
+    public Explode(int x, int y) {
         this.x = x;
         this.y = y;
-        this.gm = gm;
 
+        //GameModel.getInstance().add(this);
         Audio.play("/Users/wangzhaobin/Downloads/tankProject/src/audio/explode.wav");
 
     }
@@ -40,7 +38,7 @@ public class Explode extends GameObject{
 
         g.drawImage(ResourceMgr.explodes[step++], x, y, null);
 
-        if (step >= ResourceMgr.explodes.length) gm.remove(this);
+        if (step >= ResourceMgr.explodes.length) GameModel.getInstance().remove(this);
 
     }
 

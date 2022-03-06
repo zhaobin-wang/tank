@@ -33,7 +33,8 @@ public class Tank extends GameObject{
     //分组
 
     //持有tankFrame的引用，把子弹传递给Tank
-    public GameModel gm = null;
+    //不需要了，用的时候，直接GameModel.getInstance()就可以
+    //public GameModel gm = null;
 
     public FireStrategy fireStrategy;
 
@@ -43,12 +44,12 @@ public class Tank extends GameObject{
 
     private Random random = new Random();
 
-    public Tank(int x, int y, Dir dir, Group group, GameModel gm) {
+    public Tank(int x, int y, Dir dir, Group group) {
         this.x = x;
         this.y = y;
         this.dir = dir;
         this.group = group;
-        this.gm = gm;
+
 
         rect.x = this.x;
         rect.y = this.y;
@@ -80,6 +81,7 @@ public class Tank extends GameObject{
             }
         }
 
+
     }
 
     public void paint(Graphics g) {
@@ -87,7 +89,7 @@ public class Tank extends GameObject{
 //        g.setColor(Color.BLUE);
 //        g.fillRect(x, y, 20, 20);
 
-        if(!living) gm.remove(this);
+        if(!living) GameModel.getInstance().remove(this);
 
 
         //画图，把图片画到这个位置
