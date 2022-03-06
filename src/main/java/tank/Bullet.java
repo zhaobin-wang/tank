@@ -22,7 +22,7 @@ public class Bullet extends GameObject{
     public static  int HEIGHT = ResourceMgr.bulletD.getHeight();
 
     //
-    Rectangle rect = new Rectangle();
+    public Rectangle rect = new Rectangle();
 
     private int x, y;
 
@@ -134,7 +134,7 @@ public class Bullet extends GameObject{
 
     }
 
-    private void die() {
+    public void die() {
         this.living = false;
     }
 }
