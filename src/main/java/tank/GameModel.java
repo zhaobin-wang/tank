@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 两个身份
+ *  1.Facade 对外来说，她是门面
+ *  2.内部来看，它是Mediator  调停者
  * @author wangzhaobin
  * @date 2022/3/4 下午5:20
  */
@@ -39,7 +42,15 @@ public class GameModel {
         for (int i = 0; i < Integer.parseInt(countStr); i++) {
             add(new Tank(180 + i * 80, 100, Dir.DOWN, Group.BAD, this));
         }
+
+        //初始化墙
+        add(new Wall(150, 150, 200, 50));
+        add(new Wall(550, 150, 200, 50));
+        add(new Wall(300, 300, 50, 200));
+        add(new Wall(550, 300, 50, 200));
     }
+
+
 
     public void add(GameObject go){
         this.objects.add(go);

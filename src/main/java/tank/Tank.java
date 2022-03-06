@@ -112,6 +112,7 @@ public class Tank extends GameObject{
     }
 
     public void back(){
+        //回到上一个位置
         x = oldX;
         y = oldY;
     }
