@@ -83,7 +83,7 @@ public class TankFrame extends Frame {
 
         @Override
         public void keyPressed(KeyEvent e) {
-            log.info("key pressed!");
+
             int key = e.getKeyCode();
             //这种写法有问题，斜着走实现不了  --没加bL bU bR bD之前
             switch (key) {
@@ -113,7 +113,7 @@ public class TankFrame extends Frame {
 
         @Override
         public void keyReleased(KeyEvent e) {
-            log.info("key released!");
+
             int key = e.getKeyCode();
             //这种写法有问题，斜着走实现不了  --没加bL bU bR bD之前   键盘抬起来需要恢复为FALSE
             switch (key) {

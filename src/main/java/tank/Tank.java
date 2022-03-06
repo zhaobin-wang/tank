@@ -17,6 +17,8 @@ public class Tank extends GameObject{
 
     //位置
     public int x, y;
+
+    public int oldX, oldY;
     //默认方向
     public Dir dir = Dir.DOWN;
 
@@ -57,7 +59,6 @@ public class Tank extends GameObject{
         //extensibility  拓展性
         if (this.group == Group.GOOD) {
             String goodFireStrategyName = PropertyMgr.get("goodFireStrategy");
-            log.info("goodFireStrategyName:{}", goodFireStrategyName);
             try {
                 fireStrategy = (FireStrategy) Class.forName(goodFireStrategyName).newInstance();
                 log.info("fireStrategy:{}", fireStrategy);
@@ -110,11 +111,17 @@ public class Tank extends GameObject{
         move();
     }
 
+    public void back(){
+        x = oldX;
+        y = oldY;
+    }
+
     private void move() {
 
         //新建两个变量
         //oldx oldy   碰撞之后，回到上一个位置
-
+        oldX = x;
+        oldY = y;
 
         if (!moving) return;
         switch (dir) {

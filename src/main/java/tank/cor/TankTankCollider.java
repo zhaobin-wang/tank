@@ -20,8 +20,8 @@ public class TankTankCollider implements Collider {
                 //这样写的话，只要相交就会停止
                 //?怎么处理这个情况    A-相撞之后，下一次回到上一个位置   添加两个变量，保存上一次的位置
                 // move 的时候，都需要记录   oldx,oldy
-                t1.stop();
-                t2.stop();
+                t1.back();
+                t2.back();
             }
         }
         return true;
