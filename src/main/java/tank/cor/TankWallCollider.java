@@ -6,23 +6,23 @@ import tank.Tank;
 import tank.Wall;
 
 /**
- * 负责墙和子弹的相撞
+ * 坦克和墙相撞
  *
  * @author wangzhaobin
  * @date 2022/3/5 下午10:06
  */
-public class BulletWallCollider implements Collider {
+public class TankWallCollider implements Collider {
     @Override
     public boolean collide(GameObject o1, GameObject o2) {
-        if (o1 instanceof Bullet && o2 instanceof Wall) {
-            Bullet b = (Bullet) o1;
+        if (o1 instanceof Tank && o2 instanceof Wall) {
+            Tank t = (Tank) o1;
             Wall w = (Wall) o2;
 
-            if (b.getRect().intersects(w.getRect())) {
-                b.die();
+            if (t.getRect().intersects(w.getRect())) {
+                t.back();
             }
 
-        } else if(o1 instanceof Wall && o2 instanceof Bullet){
+        } else if(o1 instanceof Wall && o2 instanceof Tank){
             return collide(o2, o1);
         }
         return true;
