@@ -235,6 +235,8 @@
             1.1 继承--耦合度最高     聚合（属性）--耦合度其次   关联（方法的参数，方法的返回值）--a类不是b类的属性，但是在B类的方法里面，
         2.GameModel做成单例
             2.1 因为做成单例，Bullet初始化不需要把GameModel传进来，而是直接  GameModel.getInstance().add(this);
+            2.2 代码重构，解耦合
+        3.Decorator 装饰器
 
 
 

@@ -1,5 +1,7 @@
 package tank;
 
+import tank.decorator.RectDecorator;
+
 /**
  * @author wangzhaobin
  * @date 2022/2/23 下午6:00
@@ -11,6 +13,7 @@ public class DefaultFireStrategy implements FireStrategy {
         int bx = t.x + Tank.WIDTH / 2 - Bullet.WIDTH / 2;
         int by = t.y + Tank.HEIGHT / 2 - Bullet.HEIGHT / 2;
 
-        new Bullet(bx, by, t.dir, t.group);
+        //todo new bullet 又把自己加了一遍
+        new RectDecorator(new Bullet(bx, by, t.dir, t.group));
     }
 }
