@@ -18,6 +18,7 @@ public class ColliderChain implements Collider {
     private List<Collider> colliders = new LinkedList<>();
 
     public ColliderChain() {
+        //todo 挪到配置文件
         add(new BulletTankCollider());
         add(new TankTankCollider());
         add(new BulletWallCollider());

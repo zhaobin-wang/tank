@@ -19,8 +19,12 @@ import java.util.List;
 
 public class GameModel {
 
+    //单例模式
+    private static final GameModel INSTANCE = new GameModel();
+
     //V1.1 面向对象的封装
     Tank myTank = new Tank(200, 600, Dir.DOWN, Group.GOOD, this);
+
 
 
     //子弹
@@ -36,7 +40,12 @@ public class GameModel {
 
     private List<GameObject> objects = new ArrayList<>();
 
-    public GameModel() {
+    //需要使用GameModel的时候，必须使用
+    public static GameModel getInstance(){
+        return INSTANCE;
+    }
+
+    private GameModel() {
         String countStr = PropertyMgr.get("initTankCount");
         //初始化敌方坦克
         for (int i = 0; i < Integer.parseInt(countStr); i++) {
