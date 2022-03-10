@@ -132,8 +132,9 @@ public class TankFrame extends Frame {
 
                 //J键打出子弹
                 case KeyEvent.VK_J:
-                    gm.getMainTank().fire();
-                    Audio.play("/Users/wangzhaobin/Downloads/tankProject/src/audio/tank_fire.wav");
+                    gm.getMainTank().handleFireKey();
+//                    gm.getMainTank().fire();
+//                    Audio.play("/Users/wangzhaobin/Downloads/tankProject/src/audio/tank_fire.wav");
                     break;
                 default:
                     break;

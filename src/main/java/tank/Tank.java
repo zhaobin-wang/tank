@@ -1,10 +1,14 @@
 package tank;
 
-import abstractFactory.BaseTank;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import tank.observer.TankFireEvent;
+import tank.observer.TankFireHandler;
+import tank.observer.TankFireObserver;
 
 import java.awt.*;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -212,4 +216,20 @@ public class Tank extends GameObject{
     public int getHeight() {
         return HEIGHT;
     }
+
+
+    private List<TankFireObserver> fireObservers = Arrays.asList(new TankFireHandler());
+
+    //fire
+    public void handleFireKey(){
+
+        TankFireEvent event = new TankFireEvent(this);
+        for(TankFireObserver o : fireObservers){
+            o.actionOnFire(event);
+        }
+
+
+
+    }
+
 }
