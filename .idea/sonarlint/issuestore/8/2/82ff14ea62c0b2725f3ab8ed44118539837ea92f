@@ -1,0 +1,42 @@
+
+s
+java:S1104"QMake group a static final constant or non-public and provide accessors if needed.(˜Öüİûÿÿÿÿ8ÿÅ–£÷/
+E
+java:S1148T"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÿÅ–£÷/
+]	java:S125]"<This block of commented-out lines of code should be removed.(ÔŠ¢Øûÿÿÿÿ8ÿÅ–£÷/
+^	java:S125Â"<This block of commented-out lines of code should be removed.(ß˜°øÿÿÿÿ8ÿÅ–£÷/
+?
+java:S1659""Declare "oldY" on a separate line.(È¨Í™8ÿÅ–£÷/
+m
+java:S1104"PMake oldX a static final constant or non-public and provide accessors if needed.(È¨Í™8ÿÅ–£÷/
+q
+java:S1104"OMake dir a static final constant or non-public and provide accessors if needed.(³Ó‚ªüÿÿÿÿ8ÿÅ–£÷/
+g
+java:S1104-"QMake WIDTH a static final constant or non-public and provide accessors if needed.(ß›£â
+O
+java:S1874D"3Remove this use of "newInstance"; it is deprecated.(¿Í›T8ÿÅ–£÷/
+U
+java:S1874R"3Remove this use of "newInstance"; it is deprecated.(ÌÎ÷ıÿÿÿÿ8ÿÅ–£÷/
+X	java:S125)"<This block of commented-out lines of code should be removed.(¶Â¡8ÿÅ–£÷/
+E
+java:S1148G"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÿÅ–£÷/
+n
+java:S3008."QRename this field "HEIGHT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ì‰Ä 8ÿÅ–£÷/
+]	java:S125L"<This block of commented-out lines of code should be removed.(ÊÁº‘øÿÿÿÿ8ÿÅ–£÷/
+o
+java:S1104."RMake HEIGHT a static final constant or non-public and provide accessors if needed.(ì‰Ä 8ÿÅ–£÷/
+A
+java:S1444-"+Make this "public static WIDTH" field final(ß›£â
+]	java:S125u"<This block of commented-out lines of code should be removed.(ç¨İşÿÿÿÿ8ÿÅ–£÷/
+Y	java:S125Å"<This block of commented-out lines of code should be removed.(˜–Œš8ÿÅ–£÷/
+m
+java:S1104!"PMake rect a static final constant or non-public and provide accessors if needed.(ı×ÎŠ8ÿÅ–£÷/
+m
+java:S1104"PMake oldY a static final constant or non-public and provide accessors if needed.(È¨Í™8ÿÅ–£÷/
+]	java:S125"<This block of commented-out lines of code should be removed.(»ÚŒğÿÿÿÿÿ8ÿÅ–£÷/
+u
+java:S1104+"XMake fireStrategy a static final constant or non-public and provide accessors if needed.(„©Ï¨8ÿÅ–£÷/
+f
+java:S3008-"PRename this field "WIDTH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß›£â
+I
+java:S1444.",Make this "public static HEIGHT" field final(ì‰Ä 8ÿÅ–£÷/

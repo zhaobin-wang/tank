@@ -1,0 +1,26 @@
+
+g
+java:S1104"QMake WIDTH a static final constant or non-public and provide accessors if needed.(‚­ş…
+m
+java:S1104"PMake rect a static final constant or non-public and provide accessors if needed.(ı×ÎŠ8ÃÙÔêõ/
+h
+java:S1104"RMake HEIGHT a static final constant or non-public and provide accessors if needed.(›Âİí
+Q	java:S125C"<This block of commented-out lines of code should be removed.(µ¦ª¦
+J
+java:S1128"5Remove this unused import 'abstractFactory.BaseTank'.(ÔËŒH
+A
+java:S1444"+Make this "public static WIDTH" field final(‚­ş…
+V	java:S125@"<This block of commented-out lines of code should be removed.(ÔŠ¢Øûÿÿÿÿ
+g
+java:S3008"QRename this field "HEIGHT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›Âİí
+L
+java:S1128"7Remove this unused import 'abstractFactory.BaseBullet'.( Ã•9
+B
+java:S1444",Make this "public static HEIGHT" field final(›Âİí
+X	java:S125"<This block of commented-out lines of code should be removed.(“‰÷8ùà÷õõ/
+H
+java:S11354"2Complete the task associated to this TODO comment.(ÀÑ«¦
+s
+java:S1104$"QMake group a static final constant or non-public and provide accessors if needed.(˜Öüİûÿÿÿÿ8˜à¼ôõ/
+f
+java:S3008"PRename this field "WIDTH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚­ş…
