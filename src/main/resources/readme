@@ -267,5 +267,17 @@
                 1.1.1 如果本地分支名与远程分支名相同，则可以省略冒号：git push <远程主机名> <本地分支名>
 
 
+    20220315
+        1.代理  proxy
+            1.1 日志代理 时间代理 Moveable接口   tank实现Moveable/tankTimeProxy也实现moveable/TankLogProxy也实现moveable接口
+            1.2 tankTimeProxy和tankLogProxy都聚合moveable
+            1.3 new TankLogProxy(
+                    new TankTimeProxy(
+                        new Tank()
+                    )
+                ).move();       先打日志，后打出时间
+
+        2.动态代理
+
 
 

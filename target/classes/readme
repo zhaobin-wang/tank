@@ -254,7 +254,20 @@
             2.1 一个观察者 TankFireObserver
             2.2 事件 TankFireEvent 里面是tank,有getSource方法
             2.3 具体事件处理类 TankFireHandler 从TankFireObserver实现，具体的fire()动作
-            2.4 在坦克类增加很多的TankFireEvent  当按键时，坦克会发出这个时间，然后挨着遍历每一个observer，目前只有一个，让她处理时间。现在简单的处理就是拿到原对象，让它去fire
+            2.4 在坦克类增加很多的TankFireEvent  当按键时，坦克会发出这个时间，然后挨着遍历每一个observer，目前只有一个，让她处理事件。现在简单的处理就是拿到原对象，让它去fire
+            2.5 钩子函数就是 observer
+        3.composite 模式
+            3.1 组合模式，一般都是用来做树状结构的，    递归+深度 可以方便的看出树状   每次遍历都加上
+
+        4.享元模式  使用同一个，不在new 新的
+
+    20220314
+        1.git push
+            1.1 git push <远程主机名> <本地分支名>:<远程分支名>
+                1.1.1 如果本地分支名与远程分支名相同，则可以省略冒号：git push <远程主机名> <本地分支名>
+
+
+    20220315
 
 
 
