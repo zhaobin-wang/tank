@@ -278,6 +278,58 @@
                 ).move();       先打日志，后打出时间
 
         2.动态代理
+            System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles","true");
+
+    20220316
+        1.System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles","true");  生成代理类
+        2.scala/kotlin 最终还是会生成class文件，在JVM运行
+        3.JDK proxy面向接口,tank必须实现一个接口，要不没法处理
+        4.cglib  final的类不能使用cglib做代理，但asm可以（控制的是字节码）
+        5.aop
+            5.1     <bean id="tank" class="com.wangzhaobin.dp.spring.v1.Tank"/>
+                    <!--切的类-->
+                    <bean id="timeProxy" class="com.wangzhaobin.dp.spring.v1.TimeProxy"/>
+
+                    <aop:config>
+                        <aop:aspect id="time" ref="timeProxy">
+                            <!--execution(void com.wangzhaobin.dp.spring.v1.Tank.*) 所有方法-->
+                            <aop:pointcut id="onmove" expression="execution(void com.wangzhaobin.dp.spring.v1.Tank.move())"/>
+                            <aop:before method="before" pointcut-ref="onmove"/>
+                            <aop:after method="after" pointcut-ref="onmove"/>
+                        </aop:aspect>
+                    </aop:config>
+
+            5.2 自动代理
+                5.2.1 先引入
+                            <dependency>
+                                <groupId>org.aspectj</groupId>
+                                <artifactId>aspectjweaver</artifactId>
+                                <version>1.9.4</version>
+                            </dependency>
+                5.2.2
+                        配置文件
+                        <aop:aspectj-autoproxy/>
+                        <bean id="tank" class="com.wangzhaobin.dp.spring.v2.Tank"/>
+                        <bean id="timeProxy" class="com.wangzhaobin.dp.spring.v2.TimeProxy"/>
+
+                        注解代理
+                        @Aspect
+                        public class TimeProxy {
+
+                            @Before("execution(void com.wangzhaobin.dp.spring.v2.Tank.move())")
+                            public void before(){
+                                log.info("method start....{}",System.currentTimeMillis());
+                            }
+
+                            @After("execution(void com.wangzhaobin.dp.spring.v2.Tank.move())")
+                            public void after(){
+                                log.info("method end...{}", System.currentTimeMillis());
+                            }
+
+
+                        }
+
+            5.3 ioc+aop
 
 
 
