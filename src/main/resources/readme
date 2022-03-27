@@ -337,6 +337,11 @@
 
     20220324
         1.AST（抽象语法树）
+        2.ASM
+
+
+    20220326
+        1. List<String> list = Arrays.asList('','');这种创建的list，addAll时会报错。
 
 
 
