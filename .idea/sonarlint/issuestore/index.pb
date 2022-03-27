@@ -51,3 +51,7 @@ a
 1src/main/java/tank/observer/TankFireObserver.java,8/3/832cd905fe0c1724e7e157d6bf5af4e60f24dd3f
 Q
 !src/main/java/tank/TankFrame.java,9/6/96a47dc1704a8e8b3fbd582d0a8743b39fb94903
+S
+#.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
+Q
+!src/main/java/tank/ImageUtil.java,1/c/1c38bf138f0be7d8bd00ed3976b1562eaf38eead

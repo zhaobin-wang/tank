@@ -341,8 +341,17 @@
 
 
     20220326
-        1. List<String> list = Arrays.asList('','');这种创建的list，addAll时会报错。
+        1. List<String> list = Arrays.asList('','');这种创建的list，addAll时会报错。   ArrayList 继承的AbstractList类，AbstractList类的add方法就不能使用
 
 
+    20220327
+        1.责任链 filter 过去是123 回来是321  request 过去123顺序 response回来321顺序
+        怎么做到的呢？加上一个下标，判断每次执行doFilter时要不要再往下执行，如果是添加了，就往下执行，response放到doFilter后面执行就OK了。
+        2.Builder模式   对象属性比较多时，使用该模式比较好
+            2.1 Person里面多个属性，写一个静态内部类 可以比较好的构建对象   使用的方法就是 new PersonBuilder().BaseBuilder(xxx,xxx).build();
+        3.adapter  适配器（Wrapper）也叫包装器模式   转接头      从一个不能直接到另一个，中间加上一个转接头
+            3.1 常见的adapter类反而不是adapter模式（注意）  比如 KeyAdapter   只需要写你关心的方法，而不是全部的写，这是一种编程方式，方便编程  可以看下 WindowAdapter
+
+        4.桥接模式   bridge模式  用聚合代替继承      两个维度的发展   抽象类自己实现一支，实现类自己实现一支，但是在抽象类里面聚合一个具体实现。相互不影响，也不会造成类爆炸
 
 

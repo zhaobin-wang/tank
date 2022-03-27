@@ -1,6 +1,6 @@
 
-b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(·š†‡
 a
 java:S1223	"LRename this method to prevent any misunderstanding or make it a constructor.(º™Ú7
 =
 java:S2189""Add an end condition to this loop.(˜ïˆžÿÿÿÿÿ
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(·š†‡
