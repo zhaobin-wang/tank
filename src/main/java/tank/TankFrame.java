@@ -103,6 +103,15 @@ public class TankFrame extends Frame {
                     bD = true;
                     //y += 5;
                     break;
+
+                    //存盘
+                case KeyEvent.VK_S:
+                    gm.save();
+                    break;
+
+                case KeyEvent.VK_L:
+                    gm.load();
+                    break;
                 default:
                     break;
             }

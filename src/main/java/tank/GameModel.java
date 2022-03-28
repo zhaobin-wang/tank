@@ -6,8 +6,16 @@ import tank.cor.ColliderChain;
 import tank.cor.TankTankCollider;
 
 import java.awt.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 两个身份
@@ -117,5 +125,48 @@ public class GameModel {
 
     public Tank getMainTank() {
         return myTank;
+    }
+
+
+    public void save(){
+        //写到硬盘
+        ObjectOutputStream oos = null;
+        try {
+            File  f = new File("/Users/wangzhaobin/dev/tank/tank.data");
+            oos = new ObjectOutputStream(new FileOutputStream(f));
+            oos.writeObject(myTank);
+            oos.writeObject(objects);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if(Objects.nonNull(oos)){
+                try {
+                    oos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public void load(){
+        //读的时候，先写哪个，就先读哪个
+        ObjectInputStream ois = null;
+        try {
+            File  f = new File("/Users/wangzhaobin/dev/tank/tank.data");
+            ois = new ObjectInputStream(new FileInputStream(f));
+            myTank = (Tank) ois.readObject();
+            objects = (List) ois.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            if(Objects.nonNull(ois)){
+                try {
+                    ois.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }

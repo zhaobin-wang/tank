@@ -268,7 +268,96 @@
 
 
     20220315
+        1.代理  proxy
+            1.1 日志代理 时间代理 Moveable接口   tank实现Moveable/tankTimeProxy也实现moveable/TankLogProxy也实现moveable接口
+            1.2 tankTimeProxy和tankLogProxy都聚合moveable
+            1.3 new TankLogProxy(
+                    new TankTimeProxy(
+                        new Tank()
+                    )
+                ).move();       先打日志，后打出时间
 
+        2.动态代理
+            System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles","true");
+
+    20220316
+        1.System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles","true");  生成代理类
+        2.scala/kotlin 最终还是会生成class文件，在JVM运行
+        3.JDK proxy面向接口,tank必须实现一个接口，要不没法处理
+        4.cglib  final的类不能使用cglib做代理，但asm可以（控制的是字节码）
+        5.aop
+            5.1     <bean id="tank" class="com.wangzhaobin.dp.spring.v1.Tank"/>
+                    <!--切的类-->
+                    <bean id="timeProxy" class="com.wangzhaobin.dp.spring.v1.TimeProxy"/>
+
+                    <aop:config>
+                        <aop:aspect id="time" ref="timeProxy">
+                            <!--execution(void com.wangzhaobin.dp.spring.v1.Tank.*) 所有方法-->
+                            <aop:pointcut id="onmove" expression="execution(void com.wangzhaobin.dp.spring.v1.Tank.move())"/>
+                            <aop:before method="before" pointcut-ref="onmove"/>
+                            <aop:after method="after" pointcut-ref="onmove"/>
+                        </aop:aspect>
+                    </aop:config>
+
+            5.2 自动代理
+                5.2.1 先引入
+                            <dependency>
+                                <groupId>org.aspectj</groupId>
+                                <artifactId>aspectjweaver</artifactId>
+                                <version>1.9.4</version>
+                            </dependency>
+                5.2.2
+                        配置文件
+                        <aop:aspectj-autoproxy/>
+                        <bean id="tank" class="com.wangzhaobin.dp.spring.v2.Tank"/>
+                        <bean id="timeProxy" class="com.wangzhaobin.dp.spring.v2.TimeProxy"/>
+
+                        注解代理
+                        @Aspect
+                        public class TimeProxy {
+
+                            @Before("execution(void com.wangzhaobin.dp.spring.v2.Tank.move())")
+                            public void before(){
+                                log.info("method start....{}",System.currentTimeMillis());
+                            }
+
+                            @After("execution(void com.wangzhaobin.dp.spring.v2.Tank.move())")
+                            public void after(){
+                                log.info("method end...{}", System.currentTimeMillis());
+                            }
+
+
+                        }
+
+            5.3 ioc+aop
+
+    20220323
+        1.数组VS链表
+
+
+    20220324
+        1.AST（抽象语法树）
+        2.ASM
+
+
+    20220326
+        1. List<String> list = Arrays.asList('','');这种创建的list，addAll时会报错。   ArrayList 继承的AbstractList类，AbstractList类的add方法就不能使用
+
+
+    20220327
+        1.责任链 filter 过去是123 回来是321  request 过去123顺序 response回来321顺序
+        怎么做到的呢？加上一个下标，判断每次执行doFilter时要不要再往下执行，如果是添加了，就往下执行，response放到doFilter后面执行就OK了。
+        2.Builder模式   对象属性比较多时，使用该模式比较好
+            2.1 Person里面多个属性，写一个静态内部类 可以比较好的构建对象   使用的方法就是 new PersonBuilder().BaseBuilder(xxx,xxx).build();
+        3.adapter  适配器（Wrapper）也叫包装器模式   转接头      从一个不能直接到另一个，中间加上一个转接头
+            3.1 常见的adapter类反而不是adapter模式（注意）  比如 KeyAdapter   只需要写你关心的方法，而不是全部的写，这是一种编程方式，方便编程  可以看下 WindowAdapter
+
+        4.桥接模式   bridge模式  用聚合代替继承      两个维度的发展   抽象类自己实现一支，实现类自己实现一支，但是在抽象类里面聚合一个具体实现。相互不影响，也不会造成类爆炸
+
+
+    20220328
+        1.protoType 原型模式
+            1.1 要想使用clone()方法，类必须实现 Cloneable接口 要想复制一个类，第一步需要实现Cloneable接口，第二步需要重写clone方法
 
 
 
