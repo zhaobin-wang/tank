@@ -1,6 +1,24 @@
 
-]	java:S125p"<This block of commented-out lines of code should be removed.(¦ê•¶ùÿÿÿÿ8³¶ÌÒõ/
-V	java:S125\"<This block of commented-out lines of code should be removed.(Ç·‘Öùÿÿÿÿ
-X	java:S125#"<This block of commented-out lines of code should be removed.(ß¹’ú8‹ı¸Òõ/
-]	java:S125V"<This block of commented-out lines of code should be removed.(¢é¨Éøÿÿÿÿ8±êËÒõ/
-]	java:S125%"<This block of commented-out lines of code should be removed.(İ§«øÿÿÿÿ8‹ı¸Òõ/
+F
+java:S1148’"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ˆÓŠı/
+]	java:S125-"<This block of commented-out lines of code should be removed.(İ§«øÿÿÿÿ8‹ı¸Òõ/
+V	java:S125d"<This block of commented-out lines of code should be removed.(Ç·‘Öùÿÿÿÿ
+F
+java:S1148§"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÙÖÖŠı/
+F
+java:S1148¡"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8´Å½Šı/
+M
+java:S2093›"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8‚°ÔŠı/
+X	java:S125+"<This block of commented-out lines of code should be removed.(ß¹’ú8‹ı¸Òõ/
+S
+java:S1128"1Remove this unused import 'java.io.Serializable'.(èãîÂÿÿÿÿÿ8œ›ê‰ı/
+d
+java:S1075‡"ARefactor your code to get this URI from a customizable parameter.(œõã®øÿÿÿÿ8ÕìŠı/
+F
+java:S1148Œ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¸ŠŠı/
+M
+java:S2093†"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8âÅÎŠı/
+]	java:S125^"<This block of commented-out lines of code should be removed.(¢é¨Éøÿÿÿÿ8±êËÒõ/
+d
+java:S1075œ"ARefactor your code to get this URI from a customizable parameter.(œõã®øÿÿÿÿ8´Å½Šı/
+]	java:S125x"<This block of commented-out lines of code should be removed.(¦ê•¶ùÿÿÿÿ8³¶ÌÒõ/

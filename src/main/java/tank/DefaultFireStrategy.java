@@ -1,8 +1,5 @@
 package tank;
 
-import tank.decorator.RectDecorator;
-import tank.decorator.TailDecorator;
-
 /**
  * @author wangzhaobin
  * @date 2022/2/23 下午6:00

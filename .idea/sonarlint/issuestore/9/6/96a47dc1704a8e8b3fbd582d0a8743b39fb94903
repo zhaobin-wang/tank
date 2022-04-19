@@ -1,14 +1,14 @@
 
 V	java:S125\"<This block of commented-out lines of code should be removed.(–ê¤ıÿÿÿÿ
+@
+java:S1948"$Make "gm" transient or serializable.(±åU8ÊŠı/
+Y	java:S125‘"<This block of commented-out lines of code should be removed.(€·Şû8Œ£÷/
+Q	java:S125`"<This block of commented-out lines of code should be removed.(ù™¥
+F
+java:S1948)"0Make "offScreenImage" transient or serializable.(ÁŸãù
 V	java:S125h"<This block of commented-out lines of code should be removed.(Ê‡ü½úÿÿÿÿ
 V	java:S125d"<This block of commented-out lines of code should be removed.(¸Ì¬ªşÿÿÿÿ
 ?
 java:S1659")Declare "GAME_HEIGHT" on a separate line.(…÷Ó™
-F
-java:S1948)"0Make "offScreenImage" transient or serializable.(ÁŸãù
-9
-java:S1948"$Make "gm" transient or serializable.(±åU
 B
 java:S1874",Remove this use of "show"; it is deprecated.(”ô¸ï
-Y	java:S125ˆ"<This block of commented-out lines of code should be removed.(€·Şû8Œ£÷/
-Q	java:S125`"<This block of commented-out lines of code should be removed.(ù™¥
