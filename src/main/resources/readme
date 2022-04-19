@@ -192,6 +192,7 @@
         将gitlab上面的仓库地址获取到    （这里要注意，需要远程仓库里面有一个项目）  git@github.com:zhaobin-wang/tank 4cpyHpyryUqGbE4hy+7vBcBGwGjuQBR1cixJn3v+nc6jGtF+4UlIXDSOu9sYMiyCuqGKCjqQjvLDGRul                                                                                                                VmtJ8eROPMJLlRZ43Xg+vTFz0jH3EJP8OnguU+EH82XMHhgDpD0xyWS/mVcDKtYh4rUL/Ky8fXQuxY3b                                  RU5QKjHYuw88E3impT7VZz9IRcJQUtet9xVh69/qyH56SGfxZ/LjbjUbuEcR 987679265@qq.com
 
         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
+        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
         2.String to List
             List<String> list = Splitter.on(",").splitToList(Str);   需要依赖  guava
 
@@ -383,4 +384,8 @@
 
     20220401
         网络编程    烦点：异常处理、正确关闭->线程的正常结束
+
+
+    20220419
+        git 查看远程分支    git branch -r
 
