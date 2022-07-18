@@ -65,6 +65,8 @@ public class RectTank extends BaseTank {
             }
         } else {
 
+
+
             //只有一个抽象方法的接口 可以这样写
 //            fireStrategy = (t) -> {
 //                new DefaultFireStrategy();
