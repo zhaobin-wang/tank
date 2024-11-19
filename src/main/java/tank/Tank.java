@@ -17,6 +17,7 @@ import java.util.Random;
 @Slf4j
 public class Tank extends BaseTank {
 
+
     //位置
     public int x, y;
     //默认方向
